@@ -1,0 +1,14 @@
+@font-face{
+    font-family: 'shoushu';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/font/shoushu.ttf') format("truetype");
+}
+@font-face{
+    font-family: 'Muyao';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/font/Muyao.ttf') format("truetype");
+}
+body {
+    font-family: 'shoushu','Muyao';
+    
+}
