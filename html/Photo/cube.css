@@ -1,0 +1,127 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(https://pic.imgdb.cn/item/655b1ac0c458853aef64cf2d.jpg);
+}
+.nav {
+    width: 600px;    /* 导航条居中宽度要与导航条长度一致 */
+    margin: 0 auto;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav li {
+    float:left; 
+    /* display: inline; */
+    background-color: #00bbcc3c;
+    width:100px;
+    height:30px;
+    text-align: center;
+}
+.nav a {
+    font-size: 14px;
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 30px;
+    display: block;
+}
+.nav li a:hover {
+    background-color: #00cc99;
+}
+.nav li ul {
+    display: none;
+}
+.nav li:hover ul{
+    display: block;
+}
+.pd {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	/*3d空间*/
+	transform-style: preserve-3d;
+	animation: box 20s linear infinite;
+}
+
+@keyframes box {
+
+	/*3d旋转 x y z deg*/
+	from {
+		transform: rotate3d(0, 0, 0, 0deg);
+	}
+
+	to {
+		transform: rotate3d(1, 1, 1, 360deg);
+	}
+}
+
+.pd li {
+	width: 300px;
+	height: 300px;
+	list-style: none;
+	border: 1px solid black;
+	position: absolute;
+	opacity: 0.8;
+	box-shadow: 0px 0px 10px white;
+}
+
+.pd li:nth-child(1) {
+	background: url(https://pic.imgdb.cn/item/655b1abac458853aef64bdf6.jpg);
+	background-position: center;
+	background-size: cover;
+	transform: translateZ(150px);
+}
+
+/*后*/
+.pd li:nth-child(2) {
+	background: url(https://pic.imgdb.cn/item/655b1a90c458853aef6443f4.jpg);
+	background-position: center;
+	background-size: cover;
+	transform: translateZ(-150px);
+}
+
+/*左*/
+.pd li:nth-child(3) {
+	background: url(https://pic.imgdb.cn/item/655b1a85c458853aef6420dd.jpg);
+	background-position: center;
+	background-size: cover;
+	transform: rotateY(90deg) translateZ(-150px);
+}
+
+/*右*/
+.pd li:nth-child(4) {
+	background: url(https://pic.imgdb.cn/item/65579336c458853aefaa3e8e.jpg);
+	background-position: center;
+	background-size: cover;
+	transform: rotateY(90deg) translateZ(150px);
+}
+
+/*上*/
+.pd li:nth-child(5) {
+	background: url(https://pic.imgdb.cn/item/654b9c11c458853aefa8cc96.jpg);
+	background-position: center;
+	background-size: cover;
+	transform: rotateX(90deg) translateZ(150px);
+}
+
+.pd li:nth-child(6) {
+	background: url(https://pic.imgdb.cn/item/65446059c458853aef07cf65.png);
+	background-position: center;
+	background-size: cover;
+	transform: rotateX(90deg) translateZ(-150px);
+}
+
+.pd:hover {
+	animation-play-state: paused;
+}

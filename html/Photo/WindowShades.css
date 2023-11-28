@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;;
+}
+.anniu{
+	height: 40px;
+	min-width: 130px;
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+.anniu button {
+	min-width: 130px;
+	height: 40px;
+	color: #fff;
+	padding: 5px 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+	background: #57cc99;
+   z-index: 1;
+  }
+  .anniu button:hover:after {
+	width: 100%;
+	left: 0;
+  }
+  .anniu button:after {
+	border-radius: 5px;
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 100%;
+	top: 0;
+	z-index: -1;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+	transition: all 0.3s ease;
+	background-color: #80ed99;
+	right: 0;
+  }
+  .anniu button:active {
+	top: 2px;
+  }
+.box{
+	width: 1500px;
+	height: 360px;
+	margin: 200px auto;
+	/*溢出部分隐藏*/
+	overflow: hidden;
+}
+.box img{
+	width: 640px;
+	height: 360px;
+}
+li{
+	list-style: none;
+	width: 155px;
+	height: 360px;
+	float: left;
+	border-left: 5px solid white;
+	box-shadow: -5px 0px 10px black;
+	transition: all 0.5s linear;
+}
+/*鼠标悬浮在ul上，让ul变小*/
+.box ul:hover li{
+	width: 35px;
+}
+/*鼠标悬浮到某个li上，让li变大*/
+.box ul li:hover{
+	width: 635px;
+}

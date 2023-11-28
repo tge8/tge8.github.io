@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(https://pic.imgdb.cn/item/65444d3ac458853aefde0cab.png);
+}
+.anniu{
+	height: 40px;
+	min-width: 130px;
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+.anniu button {
+	min-width: 130px;
+	height: 40px;
+	color: #fff;
+	padding: 5px 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+	background: #57cc99;
+   z-index: 1;
+  }
+  .anniu button:hover:after {
+	width: 100%;
+	left: 0;
+  }
+  .anniu button:after {
+	border-radius: 5px;
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 100%;
+	top: 0;
+	z-index: -1;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+	transition: all 0.3s ease;
+	background-color: #80ed99;
+	right: 0;
+  }
+  .anniu button:active {
+	top: 2px;
+  }
+
+li {
+	list-style: none;
+}
+
+h1 {
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	color: #FFFFFF;
+}
+.box{
+	width: 645px;
+	height: 320px;
+	margin: 200px auto;
+	border: 5px solid white;
+	box-shadow: 0px 0px 10px black;
+}
+.list1,.list2{
+	float: left;
+}
+.list1{
+	width: 480px;
+	height: 270px;
+	overflow: hidden;
+}
+.list2{
+	width: 165px;
+	height: 270px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.list1 img{
+	width: 480px;
+	height: 270px;
+}
+.list2 img{
+	width: 160px;
+	height: 90px;
+}
+
+/*美化滚动条*/
+.list2::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.list2::-webkit-scrollbar-track {
+  background: rgba(144,147,153,.3);
+  border-radius: 5px;
+}
+
+.list2::-webkit-scrollbar-thumb {
+  background: rgba(144,147,153,.3);
+  border-radius: 5px;
+}

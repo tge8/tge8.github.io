@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Actions自动部署hexo</title>
+    <url>/post/1c.html</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jsdelivr cdn 缓存清理</title>
+    <url>/post/1d.html</url>
+    <content><![CDATA[<h1>1. cdn 缓存</h1>
+<p>jsDelivr 提供的全球 CDN 加速，CDN的分流作用不仅减少了用户的访问延时，也减少的源站的负载。因为 jsDelivr 是开源的免费 cdn，所以我个人一直在使用他，当然，你可以使用腾讯云，每个月 10G 基本上也足够用了，老用户甚至还要 50G 每月的流量，也着实很香。</p>
+<p><strong>缺点：</strong></p>
+<p>当网站更新时，如果CDN节点上数据没有及时更新，即便用户在浏览器使用 Ctrl +F5（win）或者 command+shift+R（mac）的强制刷新方式使浏览器端的缓存失效，也会因为CDN边缘节点没有同步最新数据而导致用户端未能及时更新。</p>
+<h1>2. jsdelivr的cdn使用规则</h1>
+<p>其实如何使用 jsdelivr，在<a href="https://www.jsdelivr.com/features">官网</a>上面就有介绍了，不过还是简单介绍下我经常使用的 github</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span>/<span class="regexp">/cdn.jsdelivr.net/gh</span><span class="regexp">/user/repo</span><span class="variable">@version</span>/file</span><br></pre></td></tr></table></figure>
+<p>具体实例：</p>
+<p>master 仓库的 <a href="https://github.com/ZhaoUncle/images">https://github.com/ZhaoUncle/images</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#github 原图</span></span><br><span class="line">https://github.com/ZhaoUncle/images/blob/master/blog/avatar.png</span><br><span class="line"><span class="comment">#master 默认不需要加版本号</span></span><br><span class="line">https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png</span><br><span class="line"><span class="comment">#如果你有多个分支多版本管理</span></span><br><span class="line">https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png</span><br></pre></td></tr></table></figure>
+<h1>3. jsdelivr 缓存刷新方法</h1>
+<p>对于 jsDelivr，缓存刷新的方式也很简单，只需将想刷新的链接的开头的cdn 更改为 purge，不过官网说后面会推出刷新工具，我这边还在观望中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/</span><br></pre></td></tr></table></figure>
+<p>切换为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://purge.jsdelivr.net/</span><br></pre></td></tr></table></figure>
+<p>**实验：**<a href="https://purge.jsdelivr.net/gh/ZhaoUncle/images@master/static/waifu.css">https://purge.jsdelivr.net/gh/ZhaoUncle/images@master/static/waifu.css</a></p>
+<p>我直接在浏览器访问这个接口得出以下数据，返回status: ok，就代表完成了。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png"><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png" alt="img"></a></p>
+<h1>4. 发现推送上去，但是 cdn 打不开？啥原因</h1>
+<p>其实也就是 cdn 缓存边缘节点还没缓存过去，方法如 3 那样直接 purge 访问强制刷新到边缘节点就好啦。</p>
+]]></content>
+      <categories>
+        <category>cdn</category>
+      </categories>
+      <tags>
+        <tag>cdn</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你好啊宝！</title>
+    <url>/post/1b.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo烧脑历程</title>
+    <url>/post/1a.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">print</span>(hello world!)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>''comments:</p>
+<p>keywords:<br>
+top_img:<br>
+mathjax:</p>
+<p>你好呀贝比！！！！</p>
+<p>aplayer:</p>
+<p>random:</p>
+<h2 id="copyright-author-悦惜等风copyright-author-href-https-xxxxxx-comcopyright-url-https-xxxxxx-comcopyright-info-此文章版權歸xxxxx所有，如有轉載，請註明來自原作者">copyright_author: 悦惜等风<br>
+copyright_author_href: <a href="https://xxxxxx.com">https://xxxxxx.com</a><br>
+copyright_url: <a href="https://xxxxxx.com">https://xxxxxx.com</a><br>
+copyright_info: 此文章版權歸xxxxx所有，如有轉載，請註明來自原作者</h2>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+</search>
