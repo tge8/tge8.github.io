@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>祺の小角落</title>
+  <icon>https://cn21.eu.org/icon.png</icon>
+  <subtitle>持之以恒，永不言弃</subtitle>
+  <link href="https://cn21.eu.org/atom.xml" rel="self"/>
+  
+  <link href="https://cn21.eu.org/"/>
+  <updated>2024-07-10T05:46:04.891Z</updated>
+  <id>https://cn21.eu.org/</id>
+  
+  <author>
+    <name>悦惜等风</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jsdelivr cdn 缓存清理</title>
+    <link href="https://cn21.eu.org/post/1d.html"/>
+    <id>https://cn21.eu.org/post/1d.html</id>
+    <published>2024-07-10T05:46:04.891Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+    <summary type="html">jsdelivr缓存清楚教程</summary>
+    
+    
+    
+    <category term="cdn" scheme="https://cn21.eu.org/categories/cdn/"/>
+    
+    
+    <category term="cdn" scheme="https://cn21.eu.org/tags/cdn/"/>
+    
+    <category term="Hexo" scheme="https://cn21.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图片下载改进版-批量下载</title>
+    <link href="https://cn21.eu.org/post/f4a0f667.html"/>
+    <id>https://cn21.eu.org/post/f4a0f667.html</id>
+    <published>2024-07-03T15:45:48.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;高效批量下载文件使用-python-进行并行下载的实用教程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#高效批量下载文件使用-python-进行并行下载的实用教程&quot;&gt;&lt;/a&gt; 高效批量下载文件：使用 Python</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="python" scheme="https://cn21.eu.org/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图片下载改进版-提取链接</title>
+    <link href="https://cn21.eu.org/post/4829f0b6.html"/>
+    <id>https://cn21.eu.org/post/4829f0b6.html</id>
+    <published>2024-07-03T15:43:28.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;由于我知道一些网站图片具体地址的链接，我就想把这些链接都提取出来保存在txt文本中，然后再利用这些链接批量下载文件！&lt;/p&gt;
+&lt;p&gt;下面是一个关于如何使用 Python</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="python" scheme="https://cn21.eu.org/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用API下载图片</title>
+    <link href="https://cn21.eu.org/post/52c1aa50.html"/>
+    <id>https://cn21.eu.org/post/52c1aa50.html</id>
+    <published>2024-07-03T07:13:45.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+    <summary type="html">关于python批量下载图片</summary>
+    
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Python" scheme="https://cn21.eu.org/tags/Python/"/>
+    
+    <category term="教程" scheme="https://cn21.eu.org/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="知识、技术" scheme="https://cn21.eu.org/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python下载资源</title>
+    <link href="https://cn21.eu.org/post/604bef91.html"/>
+    <id>https://cn21.eu.org/post/604bef91.html</id>
+    <published>2024-06-19T07:16:51.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+    <summary type="html">合法下载网络资源</summary>
+    
+    
+    
+    <category term="Python" scheme="https://cn21.eu.org/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://cn21.eu.org/tags/Python/"/>
+    
+    <category term="教程" scheme="https://cn21.eu.org/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装FFmpeg</title>
+    <link href="https://cn21.eu.org/post/35a96fd4.html"/>
+    <id>https://cn21.eu.org/post/35a96fd4.html</id>
+    <published>2024-06-19T03:11:19.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+    <summary type="html">有关FFmpeg的安装</summary>
+    
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="python" scheme="https://cn21.eu.org/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Emoji代码</title>
+    <link href="https://cn21.eu.org/post/d29ec80f.html"/>
+    <id>https://cn21.eu.org/post/d29ec80f.html</id>
+    <published>2023-11-30T11:42:01.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+    <summary type="html">markdown写作emoji代码</summary>
+    
+    
+    
+    <category term="Markdown" scheme="https://cn21.eu.org/categories/Markdown/"/>
+    
+    
+    <category term="Markdown" scheme="https://cn21.eu.org/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>首页的文章隐藏</title>
+    <link href="https://cn21.eu.org/post/715f8e32.html"/>
+    <id>https://cn21.eu.org/post/715f8e32.html</id>
+    <published>2023-11-28T13:23:28.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+    <summary type="html">把首页展示的部分文章隐藏起来</summary>
+    
+    
+    
+    <category term="Butterfly改造" scheme="https://cn21.eu.org/categories/Butterfly%E6%94%B9%E9%80%A0/"/>
+    
+    
+    <category term="教程" scheme="https://cn21.eu.org/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基本语法</title>
+    <link href="https://cn21.eu.org/post/54667693.html"/>
+    <id>https://cn21.eu.org/post/54667693.html</id>
+    <published>2023-11-28T12:05:19.000Z</published>
+    <updated>2024-07-10T05:46:04.891Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr /&gt;
+&lt;h2 id=&quot;基本语法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基本语法&quot;&gt;&lt;/a&gt; 基本语法&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;元素&lt;/th&gt;
+&lt;th&gt;Markdown</summary>
+        
+      
+    
+    
+    
+    <category term="Markdown" scheme="https://cn21.eu.org/categories/Markdown/"/>
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放页</title>
+    <style>
+	@import url('https://fonts.font.im/css2?family=Zhi+Mang+Xing&display=swap');
+        body {
+            font-family: 'Zhi Mang Xing', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #FFDEE9;
+            background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+            color: #333;
+            overflow: hidden; /* 防止背景移动 */
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            transform: translateY(100px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .back-link {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #FFDEE9, #B5FFFC);
+            color: #333;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .back-link a:hover {
+            background: linear-gradient(45deg, #B5FFFC, #FFDEE9);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+    	    color: #333; /* 设置标题颜色 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 设置文字阴影 */
+            background: linear-gradient(45deg, #FA8BFF, #2BD2FF,#2BFF88); /* 设置文字背景 */
+            -webkit-background-clip: text; /* 使用背景作为文字填充 */
+            -webkit-text-fill-color: transparent; /* 设置文字透明 */
+        }
+        h1::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(45deg, #FFDEE9, #B5FFFC);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        h1:hover::before {
+            transform: scaleX(1);
+        }
+        .video-player {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .video-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .description {
+            text-align: left;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+	    color: #333; /* 设置标题颜色 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 设置文字阴影 */
+            background: linear-gradient(45deg, #FA8BFF, #2BD2FF,#2BFF88); /* 设置文字背景 */
+            -webkit-background-clip: text; /* 使用背景作为文字填充 */
+            -webkit-text-fill-color: transparent; /* 设置文字透明 */
+        }
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #007BFF;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .loading {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 15px;
+            }
+            .description {
+                font-size: 1em;
+            }
+            .back-link a {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading spinner" id="spinner"></div>
+    <div class="container">
+        <div class="back-link">
+            <a href="index.html">返回</a>
+        </div>
+        <h1>Bilibili Video</h1>
+        <div class="video-player">
+            <iframe id="videoIframe" src="https://player.bilibili.com/player.html?aid=920646302&bvid=BV1Au4y1E7aJ&cid=1327228780&p=1&autoplay=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe>
+        </div>
+        <div class="description">
+            <p>视频外链，个人收集非原创。</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var iframe = document.getElementById('videoIframe');
+            var spinner = document.getElementById('spinner');
+            iframe.onload = function() {
+                spinner.style.display = 'none';
+            };
+            iframe.onerror = function() {
+                spinner.style.display = 'none';
+                alert('视频加载失败，请稍后再试。');
+            };
+            spinner.style.display = 'block';
+
+            // 添加 touchstart 事件监听器
+            var h1 = document.querySelector('h1');
+            h1.addEventListener('touchstart', function() {
+                this.classList.add('underline'); // 添加类名以显示下划线效果
+            });
+        });
+    </script>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

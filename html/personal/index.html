@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悦惜等风 の 个人主页 | 欢迎来到我的主场~</title>
+    <meta name="keywords" content="悦惜等风个人主页">
+    <meta name="description" content="简单且渺小">
+
+    <!-- 优化 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.5/css/personal.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.2/css/font.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- 优化内联样式 -->
+    <style>
+        .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+          left: -66px !important;
+        }
+        .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+          left: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 动态背景 -->
+        <video id="bg-video" autoplay muted loop></video>
+
+        <div class="content">
+            <div class="ide">
+                <img src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/img/avatar.jpg" alt="个人头像" />
+                <h2>悦惜等风 の 个人主页</h2>
+                <span><i class="fa fa-map-marker fa-lg"></i>贵州 ❤️ 黔东南</span>
+                <span>酷爱💌计算机~Reading Books~玩游戏~碎觉</span>
+                <span>人生犹如一场修行，不断磨砺才能披荆斩棘。</span>
+                <span>在实践中纪录经验，在成长中感悟人生。</span>
+                <span>---------社交链接---------</span>
+                <ul>
+                    <li><a href="/" title="本站"><i class="fa fa-home"></i></a></li>
+                    <li><a href="https://github.com/tge8" title="Github"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.weibo.com/u/7437738930" title="微博"><i class="fa fa-weibo"></i></a></li>
+                    <li><a href="https://space.bilibili.com/1208053210" title="B站"><i class="fa fa-reddit"></i></a></li>
+                    <li><a href="https://store.steampowered.com" title="Steam"><i class="fa fa-steam"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- APlayer -->
+    <div id="aplayer" class="aplayer" data-order="random" data-id="7328171071" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
+    
+    <!-- 优化 JS 文件 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/meting/1.2.0/Meting.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var videoSources = [
+                { src: "https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.7.1/video/bg.mp4", type: "video/mp4" },
+                { src: "https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.7.1/video/bg.webm", type: "video/webm" },
+                { src: "https://raw.githubusercontent.com/tge8/hexo-cdn/main/video/bg.mp4", type: "video/mp4" },
+                { src: "https://raw.githubusercontent.com/tge8/hexo-cdn/main/video/bg.webm", type: "video/webm" }
+            ];
+
+            var videoElement = document.getElementById('bg-video');
+            var fastestSource;
+
+            var checkVideoSource = function(source, callback) {
+                var startTime = new Date().getTime();
+                var videoTester = document.createElement('video');
+                videoTester.preload = 'metadata'; // Only load metadata to speed up testing
+                videoTester.src = source.src;
+
+                videoTester.onloadedmetadata = function() {
+                    var endTime = new Date().getTime();
+                    var loadTime = endTime - startTime;
+                    callback(source, loadTime);
+                };
+
+                videoTester.onerror = function() {
+                    callback(source, Infinity);
+                };
+            };
+
+            var loadFastestSource = function() {
+                var remaining = videoSources.length;
+                videoSources.forEach(function(source) {
+                    checkVideoSource(source, function(source, loadTime) {
+                        remaining--;
+                        if (!fastestSource || loadTime < fastestSource.loadTime) {
+                            fastestSource = { source: source, loadTime: loadTime };
+                        }
+                        if (remaining === 0 && fastestSource) {
+                            videoElement.src = fastestSource.source.src;
+                            videoElement.type = fastestSource.source.type;
+                        }
+                    });
+                });
+            };
+
+            loadFastestSource();
+        });
+    </script>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

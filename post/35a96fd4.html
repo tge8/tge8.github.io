@@ -1,0 +1,494 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>安装FFmpeg | 祺の小角落</title><meta name="author" content="悦惜等风"><meta name="copyright" content="悦惜等风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="有关FFmpeg的安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装FFmpeg">
+<meta property="og:url" content="https://cn21.eu.org/post/35a96fd4.html">
+<meta property="og:site_name" content="祺の小角落">
+<meta property="og:description" content="有关FFmpeg的安装">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65446c84c458853aef23cf10.jpg">
+<meta property="article:published_time" content="2024-06-19T03:11:19.000Z">
+<meta property="article:modified_time" content="2024-07-10T05:46:04.891Z">
+<meta property="article:author" content="悦惜等风">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/65446c84c458853aef23cf10.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/img/favicon.png"><link rel="canonical" href="https://cn21.eu.org/post/35a96fd4.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-5542604286811208',
+  enable_page_level_ads: 'true'
+});</script><link rel="stylesheet" href="/css/font.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '安装FFmpeg',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2024-07-10 13:46:04'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><style type="text/css"> .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body { left: -66px !important; } .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover { left: 0 !important; } </style><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="祺の小角落" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/css/pace.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/img/avatar.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/html/Photo/index.html"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/html/movies/index.html"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/story/"><i class="fa-fw fa fa-heartbeat"></i><span> 念诗</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 琐碎</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言</span></a></li><li><a class="site-page child" href="/html/personal/index.html"><i class="fa-fw fa fa-google-wallet"></i><span> 个人页</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-connectdevelop"></i><span> 网络</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fa fa-subway"></i><span> 开往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://foreverblog.cn/go.html"><i class="fa-fw fa fa-skyatlas"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent"><nav id="nav"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.lunwendata.com/" rel="external nofollow" title="前往中国论文网" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="/img/lunwenwang.ico"/><span class="back-menu-item-text">中国论文网</span></a><a class="back-menu-item" href="https://b.lackk.com/" rel="external nofollow" title="前往兰客笔记" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://file.lackk.com/icon/b.lackk.com.png"/><span class="back-menu-item-text">兰客笔记</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">前端</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.coderutil.com/" rel="noopener nofollow" title="前往程序员盒子" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="/img/chengxuyuan.png"/><span class="back-menu-item-text">程序员盒子</span></a></div></div></div></div><a id="site-name" href="/"><div class="title">祺の小角落</div><i class="fa-solid fa-house"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:btf.scrollToDest(0, 500)"></a></center></div><div id="weather"></div><div id="tp-weather-widget"></div> <div id="menus"><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/html/Photo/index.html"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/html/movies/index.html"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li><li><a class="site-page child" href="/story/"><i class="fa-fw fa fa-heartbeat"></i><span> 念诗</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 琐碎</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言</span></a></li><li><a class="site-page child" href="/html/personal/index.html"><i class="fa-fw fa fa-google-wallet"></i><span> 个人页</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-connectdevelop"></i><span> 网络</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fa fa-subway"></i><span> 开往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://foreverblog.cn/go.html"><i class="fa-fw fa fa-skyatlas"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">安装FFmpeg</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-19T03:11:19.000Z" title="发表于 2024-06-19 11:11:19">2024-06-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-10T05:46:04.891Z" title="更新于 2024-07-10 13:46:04">2024-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="ffmpeg-安装与使用教程"><a class="markdownIt-Anchor" href="#ffmpeg-安装与使用教程"></a> FFmpeg 安装与使用教程</h1>
+<p>FFmpeg 是一个强大的多媒体处理工具，可以用于音视频的录制、转换和流播。它支持几乎所有流行的音视频格式和编解码器。本文将介绍如何在不同操作系统上安装 FFmpeg 以及一些常见的使用示例。</p>
+<h2 id="安装-ffmpeg"><a class="markdownIt-Anchor" href="#安装-ffmpeg"></a> 安装 FFmpeg</h2>
+<h3 id="windows-安装"><a class="markdownIt-Anchor" href="#windows-安装"></a> Windows 安装</h3>
+<ul>
+<li>访问 <a target="_blank" rel="noopener" href="https://ffmpeg.org/download.html">FFmpeg 官方网站</a>，下载适用于 Windows 的 FFmpeg 压缩包。</li>
+</ul>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170932679.png" alt="第一步" /></p>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170934973.png" alt="第二步" /></p>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170935521.png" alt="第三步" /></p>
+<ul>
+<li>解压下载的压缩包，将其放在一个方便访问的位置（例如：<code>D:\ffmpeg-7.0.1</code>）。</li>
+</ul>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170937210.png" alt="解压记录位置" /></p>
+<ul>
+<li>将 FFmpeg 的 <code>bin</code> 目录添加到系统的环境变量中：</li>
+</ul>
+<p>​	右键点击“此电脑”，选择“属性”。</p>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170938574.png" alt="属性" /></p>
+<ul>
+<li>点击“高级系统设置”，然后点击“环境变量”。</li>
+</ul>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170940171.png" alt="高级系统设置" /></p>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170941544.png" alt="环境变量" /></p>
+<ul>
+<li>在“系统变量”部分，找到并选中“Path”，然后点击“编辑”。</li>
+</ul>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170942825.png" alt="系统变量" /></p>
+<ul>
+<li>点击“新建”，输入 FFmpeg 的 <code>bin</code> 目录路径，例如 <code>D:\ffmpeg-7.0.1\bin</code>，然后点击“确定”。</li>
+</ul>
+<p><img src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170944301.png" alt="环境变量" /></p>
+<ul>
+<li><strong>流程图：Windows 安装 FFmpeg</strong></li>
+</ul>
+<pre class="mermaid"> graph LR
+A[下载 FFmpeg] --> B[解压文件]
+B --> C[将 FFmpeg 放到 D:\ffmpeg-7.0.1]
+C --> D[添加 FFmpeg 到环境变量]</pre>
+<h3 id="macos-安装macos安装图略"><a class="markdownIt-Anchor" href="#macos-安装macos安装图略"></a> macOS 安装（macOS安装图略）</h3>
+<ul>
+<li>在 macOS 上，你可以使用 Homebrew 来安装 FFmpeg：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果你还没有安装 Homebrew，可以先在终端中执行以下命令来安装 Homebrew：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：macOS 安装 FFmpeg</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[安装 Homebrew] --> B[运行 brew install ffmpeg]</pre>
+<h3 id="linux-安装安装图略"><a class="markdownIt-Anchor" href="#linux-安装安装图略"></a> Linux 安装（安装图略）</h3>
+<ul>
+<li>在大多数 Linux 发行版上，你可以使用包管理器来安装 FFmpeg。</li>
+</ul>
+<p>​	对于 Debian/Ubuntu 系列：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install ffmpeg</span><br></pre></td></tr></table></figure>
+<p>​	对于 CentOS/RHEL 系列：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br><span class="line">sudo yum install ffmpeg</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：Linux 安装 FFmpeg</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[运行 sudo apt/yum install ffmpeg] --> B[安装完成]</pre>
+<h2 id="验证安装"><a class="markdownIt-Anchor" href="#验证安装"></a> 验证安装</h2>
+<ul>
+<li>安装完成后，你可以通过在终端或命令提示符中输入以下命令来验证 FFmpeg 是否安装成功：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>如果成功安装，你会看到 FFmpeg 的版本信息和编译配置。</p>
+</li>
+<li>
+<p><strong>流程图：验证安装</strong></p>
+</li>
+</ul>
+<pre class="mermaid">graph LR
+A[运行 ffmpeg -version] --> B[显示版本信息]</pre>
+<h2 id="使用-ffmpeg"><a class="markdownIt-Anchor" href="#使用-ffmpeg"></a> 使用 FFmpeg</h2>
+<ul>
+<li>FFmpeg 的命令行工具非常强大，下面是一些常见的使用示例。</li>
+</ul>
+<h3 id="转换视频格式"><a class="markdownIt-Anchor" href="#转换视频格式"></a> 转换视频格式</h3>
+<ul>
+<li>将一个 MP4 文件转换为 AVI 格式：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：转换视频格式</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入 MP4 文件] --> B[运行转换命令]
+B --> C[输出 AVI 文件]</pre>
+<h3 id="提取音频"><a class="markdownIt-Anchor" href="#提取音频"></a> 提取音频</h3>
+<ul>
+<li>从视频文件中提取音频，并保存为 MP3 格式：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -q:a 0 -map a output.mp3</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：提取音频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行提取命令]
+B --> C[输出音频文件]</pre>
+<h3 id="合并视频文件"><a class="markdownIt-Anchor" href="#合并视频文件"></a> 合并视频文件</h3>
+<ul>
+<li>
+<p>将多个视频文件合并为一个文件：</p>
+<p>首先，创建一个文本文件 <code>filelist.txt</code>，内容如下：</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file &#x27;input1.mp4&#x27;</span><br><span class="line">file &#x27;input2.mp4&#x27;</span><br><span class="line">file &#x27;input3.mp4&#x27;</span><br></pre></td></tr></table></figure>
+<p>​	然后使用以下命令合并视频文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f concat -safe 0 -i filelist.txt -c copy output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：合并视频文件</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[创建文件列表] --> B[运行合并命令]
+B --> C[输出合并文件]</pre>
+<h3 id="调整视频分辨率"><a class="markdownIt-Anchor" href="#调整视频分辨率"></a> 调整视频分辨率</h3>
+<ul>
+<li>将视频文件调整为 1280x720 分辨率：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：调整视频分辨率</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行调整命令]
+B --> C[输出调整文件]</pre>
+<h3 id="剪辑视频"><a class="markdownIt-Anchor" href="#剪辑视频"></a> 剪辑视频</h3>
+<ul>
+<li>剪辑视频从 00:01:00 开始，持续 30 秒：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -ss 00:01:00 -t 30 -c copy output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：剪辑视频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[设置起始时间和持续时间]
+B --> C[输出剪辑文件]</pre>
+<h3 id="添加水印"><a class="markdownIt-Anchor" href="#添加水印"></a> 添加水印</h3>
+<ul>
+<li>在视频上添加一个图片水印（位置在右上角）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i watermark.png -filter_complex <span class="string">&quot;overlay=W-w-10:10&quot;</span> output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：添加水印</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件和水印图片] --> B[运行添加水印命令]
+B --> C[输出带水印文件]</pre>
+<h3 id="压缩视频"><a class="markdownIt-Anchor" href="#压缩视频"></a> 压缩视频</h3>
+<ul>
+<li>使用 H.264 编码压缩视频：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：压缩视频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行压缩命令]
+B --> C[输出压缩文件]</pre>
+<h3 id="创建-gif"><a class="markdownIt-Anchor" href="#创建-gif"></a> 创建 GIF</h3>
+<ul>
+<li>从视频中创建 GIF 动画：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf <span class="string">&quot;fps=10,scale=320:-1:flags=lanczos&quot;</span> output.gif</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：创建 GIF</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行创建 GIF 命令]
+B --> C[输出 GIF 文件]</pre>
+<h3 id="分离音视频"><a class="markdownIt-Anchor" href="#分离音视频"></a> 分离音视频</h3>
+<ul>
+<li>将视频和音频分离为两个文件：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -an -vcodec copy video.mp4</span><br><span class="line">ffmpeg -i input.mp4 -vn -acodec copy audio.mp3</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：分离音视频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[分离视频命令]
+B --> C[输出视频文件]
+A --> D[分离音频命令]
+D --> E[输出音频文件]</pre>
+<h2 id="高级功能"><a class="markdownIt-Anchor" href="#高级功能"></a> 高级功能</h2>
+<h3 id="添加字幕"><a class="markdownIt-Anchor" href="#添加字幕"></a> 添加字幕</h3>
+<ul>
+<li>将 SRT 字幕文件添加到视频中：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=subtitles.srt output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：添加字幕</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件和字幕文件] --> B[运行添加字幕命令]
+B --> C[输出带字幕文件]</pre>
+<h3 id="制作缩略图"><a class="markdownIt-Anchor" href="#制作缩略图"></a> 制作缩略图</h3>
+<ul>
+<li>从视频中提取缩略图（在第 10 秒）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -ss 00:00:10 -vframes 1 thumbnail.png</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：制作缩略图</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行提取缩略图命令]
+B --> C[输出缩略图文件]</pre>
+<h3 id="添加音效"><a class="markdownIt-Anchor" href="#添加音效"></a> 添加音效</h3>
+<ul>
+<li>将音频文件添加到视频中：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i background.mp3 -c:v copy -c:a aac -strict experimental output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程图：添加音效</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件和音频文件] --> B[运行添加音效命令]
+B --> C[输出带音效文件]</pre>
+<h2 id="ffmpeg-常用参数"><a class="markdownIt-Anchor" href="#ffmpeg-常用参数"></a> FFmpeg 常用参数</h2>
+<ul>
+<li><code>-i</code>：输入文件。</li>
+<li><code>-vf</code>：视频滤镜。</li>
+<li><code>-af</code>：音频滤镜。</li>
+<li><code>-c:v</code>：视频编码器。</li>
+<li><code>-c:a</code>：音频编码器。</li>
+<li><code>-b:v</code>：视频比特率。</li>
+<li><code>-b:a</code>：音频比特率。</li>
+<li><code>-r</code>：帧率。</li>
+<li><code>-s</code>：分辨率。</li>
+<li><code>-ss</code>：开始时间。</li>
+<li><code>-t</code>：持续时间。</li>
+</ul>
+<h2 id="结论"><a class="markdownIt-Anchor" href="#结论"></a> 结论</h2>
+<ul>
+<li>
+<p>FFmpeg 是一个功能强大且灵活的多媒体处理工具，掌握它可以让你在</p>
+</li>
+<li>
+<p>音视频处理方面如虎添翼。希望这篇教程能帮助你入门 FFmpeg，并能够在日常工作中熟练使用它。</p>
+</li>
+<li>
+<p>如果你遇到任何问题或有更多的需求，FFmpeg 的<a target="_blank" rel="noopener" href="https://ffmpeg.org/documentation.html">官方文档</a>是一个非常好的资源，里面有详尽的参数解释和使用示例。</p>
+</li>
+</ul>
+<hr />
+<p><strong>声明</strong>：此教程仅供学习使用，请遵守相关法律法规和网站的使用条款，不要将此脚本用于非法用途或商业获利。如因不当使用引起的任何法律问题，作者不承担任何责任。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://cn21.eu.org">悦惜等风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://cn21.eu.org/post/35a96fd4.html">https://cn21.eu.org/post/35a96fd4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://cn21.eu.org" target="_blank">祺の小角落</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/65446c84c458853aef23cf10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/604bef91.html" title="Python下载资源"><img class="cover" src="https://pic.imgdb.cn/item/654444f2c458853aefcc259a.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python下载资源</div></div></a></div><div class="next-post pull-right"><a href="/post/d29ec80f.html" title="Emoji代码"><img class="cover" src="https://pic.imgdb.cn/item/65444987c458853aefd6d539.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.0/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Emoji代码</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/f4a0f667.html" title="图片下载改进版-批量下载"><img class="cover" src="https://pic.imgdb.cn/item/654445bec458853aefcdf17e.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">图片下载改进版-批量下载</div></div></a></div><div><a href="/post/4829f0b6.html" title="图片下载改进版-提取链接"><img class="cover" src="https://pic.imgdb.cn/item/65444d18c458853aefddc7b8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">图片下载改进版-提取链接</div></div></a></div><div><a href="/post/604bef91.html" title="Python下载资源"><img class="cover" src="https://pic.imgdb.cn/item/654444f2c458853aefcc259a.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-19</div><div class="title">Python下载资源</div></div></a></div><div><a href="/post/52c1aa50.html" title="用API下载图片"><img class="cover" src="https://pic.imgdb.cn/item/65444550c458853aefcceeaa.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">用API下载图片</div></div></a></div><div><a href="/post/715f8e32.html" title="首页的文章隐藏"><img class="cover" src="https://pic.imgdb.cn/item/65445689c458853aeff1fad2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-28</div><div class="title">首页的文章隐藏</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81OTE5NC8zNTY1Ng"></div></div></div></div></div></main><footer id="footer"><div id="ah-footer"><div class="footer-group"><h3 class="footer-title">🦄谈笑风生🦄</h3><div class="footer-links"><a class="footer-item" href="/archives/" data-pjax-state="">全部文章</a><a class="footer-item" href="/tags/" data-pjax-state="">文章标签</a><a class="footer-item" href="/categories/" data-pjax-state="">文章分类</a><a class="footer-item" target="_blank" rel="noopener" href="https://www.chinaz.com/" data-pjax-state="">站长之家</a></div></div><div class="footer-group"><h3 class="footer-title"> ✨星罗棋布✨</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="http://open.nlc.cn/onlineedu/client/index.htm" data-pjax-state="">国图公开课</a><a class="footer-item" target="_blank" rel="noopener" href="https://www.chinagwy.org/" data-pjax-state="">公考资讯网</a><a class="footer-item" target="_blank" rel="noopener" href="https://www.icourses.cn/" data-pjax-state="">爱课程</a><a class="footer-item" target="_blank" rel="noopener" href="https://www.cmooc.com/" data-pjax-state="">MOOC中国</a><a class="footer-item" target="_blank" rel="noopener" href="https://www.w3school.com.cn//" data-pjax-state="">w3school</a></div></div><div class="footer-group"><h3 class="footer-title">🐣观者如云🐣</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://www.icourses.cn/home/" data-pjax-state="">爱课程</a><a class="footer-item" href="/link/" data-pjax-state="">友情链接</a><a class="footer-item" target="_blank" rel="noopener" href="https://www.figma.cool/" data-pjax-state="">Figma</a><a class="footer-item" target="_blank" rel="noopener" href="https://qiqiblog.eu.org" data-pjax-state="">zeabur搭的站</a></div></div><div class="footer-group"><h3 class="footer-title">🐻‍❄️浮云蔽日🐻‍❄️</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://qiblog.eu.org" data-pjax-state="">notion搭的站</a><a class="footer-item" target="_blank" rel="noopener" href="https://521m.eu.org" data-pjax-state="">vercel搭的站</a><a class="footer-item" target="_blank" rel="noopener" href="https://yxdf.eu.org" data-pjax-state="">render搭的站</a><a class="footer-item" href="https://cn21.eu.org" data-pjax-state="">GitHub搭的站</a></div></div><div class="footer-group"><h3 class="footer-title">🎐美不胜收🎐</h3><div class="footer-links"><a class="footer-item" href="/about/" data-pjax-state="">关于博主</a><a class="footer-item" href="/cc/" data-pjax-state="">版权协议</a><a class="footer-item" onclick="btf.scrollToDest(0, 500)">回到顶部</a><a class="footer-item" target="_blank" rel="noopener" href="https://baby521.eu.org" data-pjax-state="">cloudflare搭的站</a></div></div></div><div id="footer-qr"><div class="qr-container"><img class="qrcode" src="/img/qr-wxgz.jpg" alt="微信公众号"/><img class="qrcode" src="/img/qr-ds.png" alt="赞赏码"/><img class="qrcode" src="/img/qr-bili.png" alt="哔哩哔哩"/></div></div><div id="fotter-copyright"><p>本站运行<i id="heartbeat" style="color:#FF6A6A" class="fa fa-heartbeat"></i><span id="runtime_span"></span></p><div class="copyrights"><span>Copyright © 2023 悦惜等风. </span><span> All rights reserved.</span></div><div class="icons"><span>网站图标 by </span><a target="_blank" rel="noopener" href="https://icons8.com">Icons8</a></div><div class="framework-info"><span>Powered by </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">&</span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fas fa-display"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa-solid fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa-solid fa-arrow-rotate-right"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa-solid fa-arrow-right"></i></a><a class="rightMenu-item" id="menu-radompage" href="javascript:window.location.href = window.location.origin;"><i class="fa-solid fa-house"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa-solid fa-copy"></i><span>复制</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa-solid fa-circle-half-stroke"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();"><i class="fa-solid fa-book"></i><span>阅读模式</span></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fas fa-arrow-up"></i><span>回到顶部</span></a><a class="rightMenu-item" onclick="toggleWinbox();"><i class="fas fa-display"></i><span>切换背景</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><style>.trc_rbox_outer {
+  display: none;
+}
+.trc_rbox_header.trc_rbox_border_elm {
+  display: none;
+}</style><script>(()=>{
+  const loadLivere = () => {
+    if (typeof LivereTower === 'object') window.LivereTower.init()
+    else {
+      (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    }
+  }
+
+  if ('Livere' === 'Livere' || !false) {
+    if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+    else loadLivere()
+  } else {
+    window.loadOtherComment = loadLivere
+  }
+})()</script></div><canvas id="universe"></canvas><script src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/universe.js"></script><script src="/js/nav_menu.js"></script><script defer src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/wow.min.js"></script><script defer data-pjax src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/fadeIn.js"></script><div class="aplayer no-destroy" data-id="7586089368" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-lrcType="-1"> </div><script src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/sun_moon.js" async></script><script src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/runtime.js" async></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js" async></script><script src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/rightmenu.js" async></script><script src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/winbox.bundle.min.js" async></script><script src="https://cdn.jsdelivr.net/gh/tge8/hexo-cdn@1.6/js/bg-button.js" async></script><script src="/js/crash_cheat.js" async></script><script src="https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.min.js"></script><script src="/js/mermaid-init.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = "b0009572-7360-4eba-9b37-9b7b2a107a6d";
+  (function () {
+    d = document;
+    s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+  $crisp.push(["safe", true])
+
+  const isChatBtn = false
+  const isChatHideShow = false
+
+  if (isChatBtn) {
+    const open = () => {
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+    }
+
+    const close = () => {
+      $crisp.push(["do", "chat:hide"])
+    }
+
+    close()
+    $crisp.push(["on", "chat:closed", function() {
+      close()
+    }])
+
+    window.chatBtnFn = () => {
+      $crisp.is("chat:visible") ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        $crisp.push(["do", "chat:hide"])
+      },
+      show: () => {
+        $crisp.push(["do", "chat:show"])
+      }
+    }
+  }
+})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

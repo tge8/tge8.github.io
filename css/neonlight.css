@@ -1,0 +1,240 @@
+/* 所有背景（包括首页卡片、文章页、页面页等） */
+#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    /* 以下代表白色透明度为0.3 */
+    background: rgba(148, 195, 199, 0.5) !important;
+    border:2px solid #0ff5ff;
+    box-shadow: 1px 1px 10px #0ff5ff !important;
+}
+#git_container,#archive,#page{
+    background:rgba(148, 195, 199, 0.5);
+    border: 2px solid #0ff5ff !important;
+    box-shadow: 1px 1px 20px #0ff5ff !important;
+}
+/*收藏博客的边框*/
+.card-info #card-info-btn {
+   border:2px solid #05f48c !important;
+   box-shadow: 1px 1px 20px #05f48c  !important;
+   background-color: transparent !important;	
+}
+.button--animated:before{
+   background:#0ff5ff !important;
+}
+/*所有的侧边栏边框*/
+.card-widget{
+    background:rgba(148, 195, 199, 0.395) !important;
+    border:2px solid #05f48c !important;
+    box-shadow: 1px 1px 20px #05f48c !important;
+}
+/*主题下面的字体颜色*/
+[data-theme='light']{
+    --font-color:rgba(42, 41, 41, 0.901) !important;
+    --text-highlight-color:rgba(38, 221, 214, 0.996) !important;
+}
+[data-theme='dark']{
+    --font-color:#2dedea !important;
+    --text-highlight-color:#21ec9efe !important;
+}
+/*电子时钟的字体颜色*/
+[data-theme=dark] .clock-row{
+    color:rgba(183, 231, 233, 0.795) !important;
+    font-size: 14px !important;
+}
+/*标题和副标题*/
+[data-theme=dark] #subtitle{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+      -webkit-background-clip: text;
+      color: transparent;
+}
+[data-theme=dark] #site-title {
+    background-image: linear-gradient(to top, #e55d87, #5fc3e4) !important;
+      -webkit-background-clip: text;
+      color: transparent !important;
+}
+/*电子时钟的字体颜色*/
+[data-theme=light] .clock-row{
+    color:#151515fe !important;
+    font-size: 14px !important;
+}
+/*标题和副标题*/
+[data-theme='light'] #subtitle{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+      -webkit-background-clip: text;
+      color: transparent !important;
+
+}
+[data-theme='light'] #site-title{
+    background-image: linear-gradient(to top, #00ff66, #fab105, #fd060f) !important;
+      -webkit-background-clip: text;
+      color: transparent !important;
+}
+/*底部字体颜色*/
+[data-theme='dark'] #footer-wrap{
+    --font-color:#0a0a0a !important;
+}
+[data-theme='light'] #footer-wrap{
+    --font-color:#0a0a0a !important;
+}
+/*底部字体链接颜色*/
+[data-theme='light'] #footer-wrap a{
+    color:#e05050fe !important;
+}
+[data-theme='dark'] #footer-wrap a{
+    color:rgba(10, 66, 68, 0.795) !important;
+}
+#fotter-copyright{
+    color: #fffdfd !important;
+    --font-size: 16px;
+}
+
+/*底部背景*/
+#footer{
+    background-color: rgba(56, 61, 61, 0.34);
+    --font-color:#fff8f8 !important;
+    --font-size: 22px !important;
+}
+
+/*侧边栏关注我字体颜色*/
+[data-theme='light']   a#card-info-btn span{
+    color:#151515fe !important;
+}
+[data-theme='dark']   a#card-info-btn span{
+    color:rgba(42, 232, 239, 0.795) !important;
+}
+/*侧边栏关注我图标颜色*/
+[data-theme='light']   a#card-info-btn i{
+    color:#000000fe !important;
+}
+[data-theme='dark']   a#card-info-btn i{
+    color:#050505fe !important;
+}
+/*导航栏字体颜色*/
+/*[data-theme='dark'] span.site-name{
+    color:#e07c7cfe !important;
+}
+[data-theme='light'] span.site-name{
+    color:#470f0ffe !important;
+}*/
+/*导航栏字体颜色*/
+/*[data-theme='light'] a.site-page{
+    color:#d9c7c7fe !important;
+}
+[data-theme='dark'] a.site-page{
+    color:#05f48c !important;
+}*/
+
+/*主页发表日期字体颜色*/
+[data-theme='light'] span.post-meta-date{
+    font-size: 14px !important;
+    color:#fffffffe !important;
+}
+[data-theme='dark'] span.post-meta-date{
+    font-size: 14px !important;
+    color:#00d9ffa6 !important;
+}
+/*主页教程那些小字体颜色需统一才好看*/
+[data-theme='light'] .article-meta-wrap{
+   font-size: 14px;
+   color:#00d9ffa6 !important;
+}
+[data-theme='dark'] .article-meta-wrap{
+   font-size: 14px;
+   color:#00d9ffa6 !important;
+}
+/* [data-theme='light'] div.card-tag-cloud a{
+    font-size: 14px;
+    color:#fffffffe !important;
+ }
+ [data-theme='dark'] div.card-tag-cloud a{
+    font-size: 14px;
+    color:#00d9ffa6 !important;
+ } */
+[data-theme='light'] div.content time{
+    font-size: 14px;
+    color:#fffffffe !important;
+ }
+ [data-theme='dark'] div.content time{
+    font-size: 14px;
+    color:#00d9ffa6 !important;
+ }
+/*这是链接颜色可以高亮*/
+[data-theme='light'] a.article-meta__tags{
+    font-size: 14px;
+    color:#00e6fb !important;
+}
+[data-theme='dark'] a.article-meta__tags{
+    font-size: 14px;
+    color:#00d9ffa6 !important;
+}
+/*这是右键菜单背景*/
+[data-theme='light'] #rightMenu{
+    background: linear-gradient(to right, #a2efc13e, #fbd88648, #f7797d4c);
+    border: 1px solid #1c1c1c6a !important;
+}
+[data-theme='dark'] #rightMenu{
+    background: linear-gradient(to right, #40e0d046, #ff84003f, #ff00002c);
+    border: 1px solid #1c1c1c6a !important;
+}
+/*这是右键菜文本颜色*/
+[data-theme='light'] #rightMenu .rightMenu-group .rightMenu-item{
+    color:rgba(58, 132, 222, 0.911) !important;
+}
+[data-theme='dark'] #rightMenu .rightMenu-group .rightMenu-item{
+    color:#21ec9ebf !important;
+}
+/*导航栏背景透明*/
+/* [data-theme='light'] #nav{
+	background: #17161649 !important;
+    backdrop-filter: none !important;
+}
+[data-theme='dark'] #nav{
+	background: #f8f8f800 !important;
+    backdrop-filter: none !important;
+}
+
+.site-page{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+      -webkit-background-clip: text;
+      color: transparent !important;
+}
+#site-name{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+      -webkit-background-clip: text;
+      color: transparent !important;
+}
+#page-name{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+    -webkit-background-clip: text;
+    color: transparent !important;
+}
+#nav a{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+    -webkit-background-clip: text;
+    color: transparent !important;
+} */
+
+[data-theme='dark'] #back-home-button{
+    --font-color:#05f48c !important;
+}
+[data-theme='dark'] i.back-home-button-icon{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+    -webkit-background-clip: text;
+    color: transparent !important;
+}
+
+[data-theme='light'] #back-home-button{
+    --font-color:#1aefb2 !important;
+}
+[data-theme='light'] i.back-home-button-icon{
+    background-image: linear-gradient(to right, #a2efc1f7, #fbd886, #f7797d) !important;
+    -webkit-background-clip: text;
+    color: transparent !important;
+}
+/*导航栏展开栏背景透明*/
+/* [data-theme='light'] .menus_item_child{
+    background: #e3e2e22b !important;
+    backdrop-filter: none !important;
+}
+[data-theme='dark'] .menus_item_child{
+    background: #f8f8f81a !important;
+    backdrop-filter: none !important;
+} */

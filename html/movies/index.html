@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人收集哔哩视频</title>
+    <link rel="preload" href="https://fonts.font.im/css2?family=Zhi+Mang+Xing&display=swap" as="style">
+    <style>
+        @import url('https://fonts.font.im/css2?family=Zhi+Mang+Xing&display=swap');
+
+        body {
+            font-family: 'Zhi Mang Xing', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #333;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative; /* 为了定位返回按钮 */
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #FFDEE9, #B5FFFC);
+            color: #333;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 1em;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #B5FFFC, #FFDEE9);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid #C2F1DF;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+            background: linear-gradient(45deg, #FA8BFF, #2BD2FF, #2BFF88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            transition: text-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        h1:hover {
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .video-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 默认两列布局 */
+            gap: 15px; /* 列之间的间隔 */
+            align-items: center;
+            justify-items: center;
+        }
+
+        .video-link a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FFDEE9, #B5FFFC);
+            color: #333;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-link a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+            opacity: 0;
+        }
+
+        .video-link a:hover::before {
+            opacity: 1;
+            top: 50%;
+        }
+
+        .video-link a:hover {
+            background: linear-gradient(45deg, #B5FFFC, #FFDEE9);
+            transform: translateY(-3px) scale(1.05) rotate(1deg);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid #C2F1DF;
+        }
+
+        footer {
+            max-width: 800px;
+            width: 100%;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.8em;
+            color: #333;
+            background: linear-gradient(45deg, #FA8BFF, #2BD2FF, #2BFF88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (min-width: 769px) {
+            h1 {
+                font-size: 3.5em;
+                margin-bottom: 30px;
+            }
+
+            .container {
+                padding: 40px;
+            }
+
+            .video-link a {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+
+            .video-links {
+                grid-template-columns: repeat(4, 1fr); /* 四列布局 */
+            }
+
+            footer {
+                margin-top: 50px;
+                padding: 20px;
+            }
+
+            footer p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-links {
+                grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+            }
+
+            .video-link a {
+                padding: 15px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <a class="back-button" href="/">返回</a> <!-- 返回根目录按钮 -->
+            <h1>收集页</h1>
+            <div class="video-links">
+                <div class="video-link"><a href="video1.html">▶ 视频1</a></div>
+                <div class="video-link"><a href="video2.html">▶ 视频2</a></div>
+                <div class="video-link"><a href="video3.html">▶ 视频3</a></div>
+                <div class="video-link"><a href="video4.html">▶ 视频4</a></div>
+                <div class="video-link"><a href="video5.html">▶ 视频5</a></div>
+                <div class="video-link"><a href="video6.html">▶ 视频6</a></div>
+                <div class="video-link"><a href="video7.html">▶ 视频7</a></div>
+                <div class="video-link"><a href="video8.html">▶ 视频8</a></div>
+                <div class="video-link"><a href="video9.html">▶ 视频9</a></div>
+                <div class="video-link"><a href="video10.html">▶ 视频10</a></div>
+                <div class="video-link"><a href="video11.html">▶ 视频11</a></div>
+                <div class="video-link"><a href="video12.html">▶ 视频12</a></div>
+                <!-- 添加更多视频链接 -->
+            </div>
+            <footer>
+                <p>&copy; 2024 哔哩收集页。悦惜等风保留所有权利。</p>
+            </footer>
+        </div>
+    </div>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

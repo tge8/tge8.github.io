@@ -1,0 +1,104 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+  background: url(https://pic.imgdb.cn/item/655b1ab4c458853aef64a92c.jpg);
+  background-size: cover;
+  min-width: 1200px;
+  min-height: 700px;
+}
+.anniu{
+	height: 40px;
+	min-width: 130px;
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+.anniu button {
+	min-width: 130px;
+	height: 40px;
+	color: #fff;
+	padding: 5px 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+	background: #57cc99;
+   z-index: 1;
+  }
+  .anniu button:hover:after {
+	width: 100%;
+	left: 0;
+  }
+  .anniu button:after {
+	border-radius: 5px;
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 100%;
+	top: 0;
+	z-index: -1;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+	transition: all 0.3s ease;
+	background-color: #80ed99;
+	right: 0;
+  }
+  .anniu button:active {
+	top: 2px;
+  }
+.main{
+  width: 1200px;
+  height: 700px;
+  margin: auto;
+  position: relative;
+}
+
+img{
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+a{
+	position: absolute;
+	font-size: 30px;
+	width: 200px;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	animation: light 2s linear infinite;
+}
+@keyframes light{
+	0%{
+		text-shadow: 0px 0px 5px white;
+	}
+	50%{
+		text-shadow: 0px 0px 20px white;
+	}
+	100%{
+		text-shadow: 0px 0px 5px white;
+	}
+}
+a:nth-child(even){
+	left: 15%;
+}
+a:nth-child(odd){
+	right: 15%;
+}
+a:nth-child(2),a:nth-child(5){
+	top: 30%;
+}
+a:nth-child(3),a:nth-child(6){
+	top: 50%;
+}
+a:nth-child(4),a:nth-child(7){
+	top: 70%;
+}
