@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频播放</title>
+  <link rel="stylesheet" href="movie.css">
+  <script src="movie.js"></script>
+</head>
+<body class="movie-player-page">
+  <main class="container">
+    <nav class="back-link movie-player-nav" aria-label="播放页导航">
+      <a href="index.html">视频首页</a>
+    </nav>
+    <h1 id="videoTitle">正在加载视频</h1>
+    <div class="video-player">
+      <iframe id="videoIframe" title="视频播放器" scrolling="no" frameborder="no" allowfullscreen="true"></iframe>
+    </div>
+    <nav class="movie-player-actions" aria-label="切换视频">
+      <a class="movie-nav-prev" href="index.html" aria-label="上一个视频">上一个</a>
+      <a class="movie-nav-next" href="index.html" aria-label="下一个视频">下一个</a>
+    </nav>
+    <div class="description">
+      <p>视频外链，个人收集非原创。</p>
+    </div>
+  </main>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

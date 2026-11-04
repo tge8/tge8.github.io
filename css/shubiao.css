@@ -1,0 +1,11 @@
+/*这里放外框*/
+body{
+cursor: url(https://cdn.custom-cursor.com/db/10266/32/gacha-life-abutunes-and-hime-sama-cursor.png) , default !important
+
+}
+/*这里放内框*/
+a,img,button{
+
+cursor: url(https://cdn.custom-cursor.com/db/10265/32/gacha-life-abutunes-and-hime-sama-pointer.png)   , pointer !important
+
+}
